@@ -5,7 +5,7 @@ import ExpenseItem from './components/ExpenseItem';
 function App() {
   return (
     <div className="App">
-      <ExpenseItem />
+      <ExpenseItem title='Car Wash' price='$7.68' date={new Date(2023, 2, 25)} />
     </div>
   );
 }
