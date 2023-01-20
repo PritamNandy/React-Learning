@@ -1,4 +1,5 @@
 
+import { useState } from 'react';
 import './App.css';
 import Expenses from './components/expenses/Expenses';
 import NewExpense from './components/newExpense/NewExpense';
@@ -25,9 +26,14 @@ function App() {
       date: new Date(2021, 5, 12),
     },
   ];
+
+  const addExpenseHandler = (expense) => {
+    console.log(expense)
+  }
+
   return (
     <div className="App">
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses} />
     </div>
   );
