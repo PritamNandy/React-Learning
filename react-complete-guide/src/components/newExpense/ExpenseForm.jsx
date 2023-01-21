@@ -70,8 +70,14 @@ export default function ExpenseForm(props) {
                     onChange={changeHandler} />
                 </div>
             </div>
-            <div className='new-expense__actions'>
-                <button type='submit'>Add Expense</button>
+            <div style={{display: 'flex', justifyContent: 'end'}}>
+                <div className='new-expense__actions'>
+                    <button type='button'
+                    onClick={props.onCancel}>Cancel</button>
+                </div>
+                <div className='new-expense__actions'>
+                    <button type='submit'>Add Expense</button>
+                </div>
             </div>
         </form>
     </div>
