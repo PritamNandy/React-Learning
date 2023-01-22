@@ -3,7 +3,7 @@ import Button from '../ui/Button';
 import Card from '../ui/Card';
 import classes from './AddUser.module.css'
 
-export default function AddUser() {
+export default function AddUser(props) {
     const addUserHandler = (event) => {
         event.preventDefault();
         if(username.trim().length === 0 || age.trim().length === 0) {
@@ -14,6 +14,15 @@ export default function AddUser() {
         }
         setUsername('')
         setAge('')
+        props.setUserList((prevState) => (
+          [
+            ...prevState,
+            {
+              username: username,
+              age: age
+            }
+          ]
+        ))
     }
     const [username, setUsername] = useState('')
     const [age, setAge] = useState('')
